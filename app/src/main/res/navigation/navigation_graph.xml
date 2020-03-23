@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_massFrag"
+            app:destination="@id/massFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/lengthFrag"
+        android:name="com.ebookfrenzy.fragmentexample.LengthFrag"
+        android:label="LengthFrag" >
+        <action
+            android:id="@+id/action_lengthFrag_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/massFrag"
+        android:name="com.ebookfrenzy.fragmentexample.MassFrag"
+        android:label="MassFrag" >
+        <action
+            android:id="@+id/action_massFrag_to_tempFrag"
+            app:destination="@id/tempFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/tempFrag"
+        android:name="com.ebookfrenzy.fragmentexample.TempFrag"
+        android:label="TempFrag" >
+        <action
+            android:id="@+id/action_tempFrag_to_lengthFrag"
+            app:destination="@id/lengthFrag" />
+    </fragment>
+</navigation>
